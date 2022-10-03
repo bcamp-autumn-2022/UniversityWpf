@@ -69,9 +69,6 @@ namespace UniversityWpf
         }
         static async Task<string> LoginToUni(string u, string p)
         {
-            var userName = "admin";
-            var passwd = "1234";
-            var authData = Encoding.ASCII.GetBytes($"{userName}:{passwd}");
             string base_url = MyEnvironment.GetBaseUrl();
             var response = string.Empty;
             var url = base_url + "/login";
@@ -80,7 +77,6 @@ namespace UniversityWpf
             var json = JsonConvert.SerializeObject(objectUser);
             var postData = new StringContent(json, Encoding.UTF8, "application/json");
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(authData));
             HttpResponseMessage result = await client.PostAsync(url, postData);
             response = await result.Content.ReadAsStringAsync();
             return response;

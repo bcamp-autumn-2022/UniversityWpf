@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniversityWpf"
         mc:Ignorable="d"
-        Title="StudentMenu" Height="450" Width="800">
+        Title="StudentMenu" Height="300" Width="600">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnData" Grid.Column="1" Content="My Data" Grid.Row="1" RenderTransformOrigin="5.526,0.28" Click="btnData_Click"/>
+        <Button x:Name="btnGrade" Grid.Column="3" Content="My Grades" Grid.Row="1"/>
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <TextBlock x:Name="textFn" TextWrapping="Wrap" />
+            <TextBlock x:Name="textLn" TextWrapping="Wrap" />
+            <TextBlock x:Name="textUn" TextWrapping="Wrap" />
+            <TextBlock x:Name="textStart" TextWrapping="Wrap" />
+            <TextBlock x:Name="textGraduate" TextWrapping="Wrap" />
+        </StackPanel>
+
     </Grid>
 </Window>
