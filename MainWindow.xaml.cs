@@ -44,11 +44,20 @@ namespace UniversityWpf
                 if (string.Compare(response, "true") == 0)
                 {
                     Console.WriteLine("Login OK");
-                    MessageBox.Show("Login OK");
+                    //MessageBox.Show("Login OK");
+                    Singleton si = Singleton.Instance;
+                    si.Username= username;
+                    si.Password= password;
+                    StudentMenu objectStudentMenu=new StudentMenu();
+                    objectStudentMenu.Show();
+                    this.Close();
+
                 }
                 else
                 {
                     MessageBox.Show("Wrong username/password");
+                    textUsername.Clear();
+                    textPassword.Clear();
                 }
             }
             else
