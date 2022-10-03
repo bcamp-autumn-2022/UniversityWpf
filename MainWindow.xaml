@@ -27,7 +27,7 @@
         <TextBlock x:Name="tbPassword" Grid.Column="1" Grid.Row="3"  Text="password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         <TextBox x:Name="textUsername" Grid.Column="3" Grid.Row="1" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="textPassword" Grid.Column="3" Grid.Row="3" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="btnLogin" Grid.Column="3" Content="Login" Grid.Row="5" FontSize="20"/>
+        <Button x:Name="btnLogin" Grid.Column="3" Content="Login" Grid.Row="5" FontSize="20" Click="btnLogin_Click"/>
 
     </Grid>
 </Window>
