@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniversityWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="University" Height="300" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="tbUsername" Grid.Column="1" Grid.Row="1"  Text="username" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="tbPassword" Grid.Column="1" Grid.Row="3"  Text="password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="textUsername" Grid.Column="3" Grid.Row="1" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="textPassword" Grid.Column="3" Grid.Row="3" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="btnLogin" Grid.Column="3" Content="Login" Grid.Row="5" FontSize="20"/>
+
     </Grid>
 </Window>
