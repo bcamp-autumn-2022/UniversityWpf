@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button x:Name="btnData" Grid.Column="1" Content="My Data" Grid.Row="1" RenderTransformOrigin="5.526,0.28" Click="btnData_Click"/>
-        <Button x:Name="btnGrade" Grid.Column="3" Content="My Grades" Grid.Row="1"/>
+        <Button x:Name="btnGrade" Grid.Column="3" Content="My Grades" Grid.Row="1" Click="btnGrade_Click"/>
         <StackPanel Grid.Column="1" Grid.Row="2">
             <TextBlock x:Name="textFn" TextWrapping="Wrap" />
             <TextBlock x:Name="textLn" TextWrapping="Wrap" />
@@ -28,6 +28,7 @@
             <TextBlock x:Name="textStart" TextWrapping="Wrap" />
             <TextBlock x:Name="textGraduate" TextWrapping="Wrap" />
         </StackPanel>
+        <DataGrid x:Name="gridGrades" Grid.Column="3" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
 
     </Grid>
 </Window>
