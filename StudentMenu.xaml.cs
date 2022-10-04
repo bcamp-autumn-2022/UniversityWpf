@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace UniversityWpf
 {
@@ -62,6 +63,48 @@ namespace UniversityWpf
             response = await result.Content.ReadAsStringAsync();
             //Console.WriteLine(response);
             return response;
+        }
+
+        static async Task<string> GetStudentGrade()
+        {
+            Singleton si = Singleton.Instance;
+            string userName = si.Username;
+            var passwd = si.Password;
+            var authData = Encoding.ASCII.GetBytes($"{userName}:{passwd}");
+            var response = string.Empty;
+            var url = MyEnvironment.GetBaseUrl() + "/studentdata/grade/" + userName;
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(authData));
+            HttpResponseMessage result = await client.GetAsync(url);
+            response = await result.Content.ReadAsStringAsync();
+            //Console.WriteLine(response);
+            return response;
+        }
+
+        private void btnGrade_Click(object sender, RoutedEventArgs e)
+        {
+            var data = Task.Run(() => GetStudentGrade());
+            data.Wait();
+            Console.WriteLine(data.Result);
+            if (data.Result.Length > 3) //Result is not []
+            {
+                dynamic student_data = JsonConvert.DeserializeObject(data.Result);
+
+                gridGrades.ItemsSource = student_data;//writes the data to DataGrid
+
+                string student_grades = "";
+                foreach (var grade in student_data)
+                {
+                    student_grades += grade.coursename + " | " + grade.cderit + " | " +  "\n";
+                }
+                //txtBooks.Text = book_data;*/
+                Console.WriteLine(student_grades);
+
+            }
+            else
+            {
+                MessageBox.Show("There is no books");
+            }
         }
     }
 }
