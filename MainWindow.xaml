@@ -6,16 +6,17 @@
         xmlns:local="clr-namespace:UniversityWpf"
         mc:Ignorable="d"
         Title="University" Height="300" Width="400">
+    
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="160"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="160"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="40"/>
@@ -28,6 +29,17 @@
         <TextBox x:Name="textUsername" Grid.Column="3" Grid.Row="1" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="textPassword" Grid.Column="3" Grid.Row="3" Width="140" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button x:Name="btnLogin" Grid.Column="3" Content="Login" Grid.Row="5" FontSize="20" Click="btnLogin_Click"/>
-
+        <Menu x:Name="menu">
+            <DockPanel >
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_File" Width="380">
+                        <MenuItem Header="_Open"/>
+                        <MenuItem Header="_Close"/>
+                        <MenuItem Header="_Save"/>
+                    </MenuItem>
+                </Menu>
+                <StackPanel></StackPanel>
+            </DockPanel>
+        </Menu>
     </Grid>
 </Window>
