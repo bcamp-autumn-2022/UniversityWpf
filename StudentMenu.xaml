@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -29,6 +29,18 @@
             <TextBlock x:Name="textGraduate" TextWrapping="Wrap" />
         </StackPanel>
         <DataGrid x:Name="gridGrades" Grid.Column="3" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
-
+        <Menu x:Name="menu">
+            <DockPanel >
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_File" Width="380">
+                        <MenuItem Header="_Open" Click="MenuItem_Click_3" />
+                        <MenuItem Header="_MyData" Click="MenuItem_Click"/>
+                        <MenuItem Header="_MyGrades" Click="MenuItem_Click_1"  />
+                        <MenuItem Header="_Exit" Click="MenuItem_Click_2" />
+                    </MenuItem>
+                </Menu>
+                <StackPanel></StackPanel>
+            </DockPanel>
+        </Menu>
     </Grid>
 </Window>
